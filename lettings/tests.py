@@ -7,7 +7,7 @@ from django.test import Client
 from django.urls import reverse, resolve
 
 from lettings.models import Address, Letting
-from lettings.views import lettings_index, letting
+from lettings.views import index, letting
 
 
 @pytest.fixture
@@ -53,9 +53,9 @@ class TestLettingsUrls:
     """Integration tests for lettings URL resolution."""
 
     def test_lettings_index_url_resolves(self):
-        """URL /lettings/ resolves to lettings_index view."""
-        url = reverse('lettings:lettings_index')
-        assert resolve(url).func == lettings_index
+        """URL /lettings/ resolves to index view."""
+        url = reverse('lettings:index')
+        assert resolve(url).func == index
 
     def test_letting_detail_url_resolves(self):
         """URL /lettings/<id>/ resolves to letting view."""
@@ -71,16 +71,16 @@ class TestLettingsViews:
     def test_lettings_index_returns_200(self, db):
         """GET /lettings/ returns HTTP 200."""
         client = Client()
-        url = reverse('lettings:lettings_index')
+        url = reverse('lettings:index')
         response = client.get(url)
         assert response.status_code == 200
 
     def test_lettings_index_uses_correct_template(self, db):
-        """GET /lettings/ uses lettings/lettings_index.html template."""
+        """GET /lettings/ uses lettings/index.html template."""
         client = Client()
-        url = reverse('lettings:lettings_index')
+        url = reverse('lettings:index')
         response = client.get(url)
-        assert 'lettings/lettings_index.html' in [t.name for t in response.templates]
+        assert 'lettings/index.html' in [t.name for t in response.templates]
 
     def test_letting_detail_returns_200(self, sample_letting):
         """GET /lettings/<id>/ returns HTTP 200."""

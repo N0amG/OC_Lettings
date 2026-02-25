@@ -8,7 +8,7 @@ from django.test import Client
 from django.urls import reverse, resolve
 
 from profiles.models import Profile
-from profiles.views import profiles_index, profile
+from profiles.views import index, profile
 
 
 @pytest.fixture
@@ -45,13 +45,13 @@ class TestProfilesUrls:
     """Integration tests for profiles URL resolution."""
 
     def test_profiles_index_url_resolves(self):
-        """URL /profiles/ resolves to profiles_index view."""
+        """URL /profiles/ resolves to index view."""
         
         # On récupère l'url depuis la view
-        url = reverse('profiles:profiles_index')
+        url = reverse('profiles:index')
         
         # On vérifie que la fonction renvoyée a cet url correspond à la fonction de la meme view
-        assert resolve(url).func == profiles_index
+        assert resolve(url).func == index
 
     def test_profile_detail_url_resolves(self):
         """URL /profiles/<username>/ resolves to profile view."""
@@ -68,16 +68,16 @@ class TestProfilesViews:
         """GET /profiles/ returns HTTP 200."""
         # Client de test Django (simule un navigateur)
         client = Client()
-        url = reverse('profiles:profiles_index')
+        url = reverse('profiles:index')
         response = client.get(url)
         assert response.status_code == 200
 
     def test_profiles_index_uses_correct_template(self, db):
-        """GET /profiles/ uses profiles/profiles_index.html template."""
+        """GET /profiles/ uses profiles/index.html template."""
         client = Client()
-        url = reverse('profiles:profiles_index')
+        url = reverse('profiles:index')
         response = client.get(url)
-        assert 'profiles/profiles_index.html' in [t.name for t in response.templates]
+        assert 'profiles/index.html' in [t.name for t in response.templates]
 
     def test_profile_detail_returns_200(self, sample_profile):
         """GET /profiles/<username>/ returns HTTP 200."""

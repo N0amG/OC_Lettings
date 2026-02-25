@@ -6,11 +6,11 @@ from django.shortcuts import render
 from .models import Profile
 
 
-def profiles_index(request):
+def index(request):
     """Render the list of all user profiles."""
     profiles_list = Profile.objects.all()
     context = {'profiles_list': profiles_list}
-    return render(request, 'profiles/profiles_index.html', context)
+    return render(request, 'profiles/index.html', context)
 
 
 def profile(request, username):
