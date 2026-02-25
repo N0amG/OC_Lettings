@@ -38,6 +38,7 @@ class TestOcLettingsSiteViews:
 
     def test_handler404_returns_404(self):
         """handler404 returns HTTP 404 with the 404 template."""
+        # Simulate a 404 error by calling the handler directly
         factory = RequestFactory()
         request = factory.get('/nonexistent/')
         response = handler404(request, exception=Exception('Not found'))
@@ -49,8 +50,3 @@ class TestOcLettingsSiteViews:
         request = factory.get('/')
         response = handler500(request)
         assert response.status_code == 500
-
-
-def test_dummy():
-    """Placeholder test to verify the test suite runs correctly."""
-    assert 1

@@ -3,23 +3,20 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-
 import sentry_sdk
-
-
-# Sentry configuration
-sentry_sdk.init(
-    dsn=os.environ.get('SENTRY_DSN'),
-    # Add data like request headers and IP for users,
-    # see https://docs.sentry.io/platforms/python/data-management/data-collected/ for more info
-    send_default_pii=True,
-)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Charge les variables d'environnement depuis le fichier .env
 load_dotenv(BASE_DIR / '.env')
+
+# Sentry configuration
+sentry_sdk.init(
+    dsn=os.environ.get('SENTRY_DSN', ''),
+    send_default_pii=True,
+    traces_sample_rate=1.0,
+)
 
 
 # Quick-start development settings - unsuitable for production
@@ -130,3 +127,18 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static",]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+# Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+}
