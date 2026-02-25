@@ -46,7 +46,11 @@ class TestProfilesUrls:
 
     def test_profiles_index_url_resolves(self):
         """URL /profiles/ resolves to profiles_index view."""
+        
+        # On récupère l'url depuis la view
         url = reverse('profiles:profiles_index')
+        
+        # On vérifie que la fonction renvoyée a cet url correspond à la fonction de la meme view
         assert resolve(url).func == profiles_index
 
     def test_profile_detail_url_resolves(self):
@@ -62,6 +66,7 @@ class TestProfilesViews:
 
     def test_profiles_index_returns_200(self, db):
         """GET /profiles/ returns HTTP 200."""
+        # Client de test Django (simule un navigateur)
         client = Client()
         url = reverse('profiles:profiles_index')
         response = client.get(url)
