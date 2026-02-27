@@ -6,7 +6,7 @@ venv/
 .git/
 .gitignore
 
-# Variables d'environnement (ne jamais inclure dans l'image)
+# Variables d'environnement
 .env
 
 # Cache Python
@@ -14,9 +14,6 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-
-# Base de données locale
-*.sqlite3
 
 # Fichiers statiques collectés (générés dans le conteneur)
 staticfiles/

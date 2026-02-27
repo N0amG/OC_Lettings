@@ -31,8 +31,8 @@ RUN SECRET_KEY=dummy-key-for-collectstatic \
 
 EXPOSE 8000
 
-# Gunicorn sert l'application en production
-CMD ["gunicorn", "oc_lettings_site.wsgi:application", \
-     "--bind", "0.0.0.0:8000", \
-     "--workers", "2", \
-     "--log-level", "info"]
+# Gunicorn utilise $PORT si défini (Render), sinon 8000 (local)
+CMD gunicorn oc_lettings_site.wsgi:application \
+    --bind 0.0.0.0:${PORT:-8000} \
+    --workers 2 \
+    --log-level info
