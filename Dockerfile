@@ -31,8 +31,6 @@ RUN SECRET_KEY=dummy-key-for-collectstatic \
 
 EXPOSE 8000
 
-# Gunicorn utilise $PORT si défini (Render), sinon 8000 (local)
-CMD gunicorn oc_lettings_site.wsgi:application \
-    --bind 0.0.0.0:${PORT:-8000} \
-    --workers 2 \
-    --log-level info
+# Au démarrage : collectstatic (sécurité si staticfiles/ absent de l'image),
+# migrate (assure que le schéma DB est à jour), puis gunicorn.
+CMD sh -c "python manage.py collectstatic --noinput && python manage.py migrate --noinput && gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:${PORT:-8000} --workers 2 --log-level info"
