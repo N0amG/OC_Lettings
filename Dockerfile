@@ -27,10 +27,11 @@ COPY . .
 RUN SECRET_KEY=dummy-key-for-collectstatic \
     DEBUG=False \
     ALLOWED_HOSTS=localhost \
-    python manage.py collectstatic --noinput
-
+    python manage.py collectstatic --noinput &&
+    python manage.py migrate --noinput
+    
 EXPOSE 8000
 
 # Au démarrage : migrate (assure que le schéma DB est à jour), puis gunicorn.
 # collectstatic est déjà exécuté dans le RUN ci-dessus et baked dans l'image.
-CMD sh -c "python manage.py migrate --noinput && gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:${PORT:-8000} --workers 2 --log-level info"
+CMD ["gunicorn", "--bind", ":8000", "--workers", "3", "oc_lettings_site.wsgi:application"]
