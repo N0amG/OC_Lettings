@@ -24,10 +24,7 @@ COPY --from=builder /usr/local/bin /usr/local/bin
 COPY . .
 
 # Collecter les fichiers statiques (SECRET_KEY temporaire uniquement pour collectstatic)
-RUN SECRET_KEY=dummy-key-for-collectstatic \
-    DEBUG=False \
-    ALLOWED_HOSTS=localhost \
-    python manage.py collectstatic --noinput && \
+RUN python manage.py collectstatic --noinput && \
     python manage.py migrate --noinput
     
 EXPOSE 8000
