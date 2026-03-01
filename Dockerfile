@@ -27,7 +27,7 @@ COPY . .
 RUN SECRET_KEY=dummy-key-for-collectstatic \
     DEBUG=False \
     ALLOWED_HOSTS=localhost \
-    python manage.py collectstatic --noinput &&
+    python manage.py collectstatic --noinput && \
     python manage.py migrate --noinput
     
 EXPOSE 8000
