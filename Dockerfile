@@ -3,8 +3,6 @@ FROM python:3.12.10-slim AS builder
 
 WORKDIR /app
 
-LABEL org.opencontainers.image.source="https://github.com/N0amG/OC_Lettings"
-
 # Installer les dépendances
 COPY requirements.txt .
 RUN pip install --upgrade pip \
@@ -25,7 +23,7 @@ COPY --from=builder /usr/local/bin /usr/local/bin
 # Copier le code source
 COPY . .
 
-# Collecter les fichiers statiques (SECRET_KEY temporaire uniquement pour collectstatic)
+# Collecter les fichiers statiques
 RUN python manage.py collectstatic --noinput && \
     python manage.py migrate --noinput
     
