@@ -16,6 +16,8 @@ documentation for details.
    :caption: Contents:
 
    installation
+   architecture
+   configuration
    deployment
    database
    usage

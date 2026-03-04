@@ -3,10 +3,10 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Recherche" href="search.html"><link rel="next" title="Installation locale" href="installation.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Recherche" href="search.html"><link rel="next" title="Configuration" href="configuration.html"><link rel="prev" title="Installation locale" href="installation.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>Documentation OC_Lettings V1.0</title>
+        <title>Architecture du projet - Documentation OC_Lettings V1.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
@@ -161,7 +161,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Documentation OC_Lettings V1.0</div></a>
+      <a href="index.html"><div class="brand">Documentation OC_Lettings V1.0</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -172,7 +172,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
@@ -180,7 +180,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   <span class="sidebar-brand-text">Documentation OC_Lettings V1.0</span>
   
@@ -191,9 +191,9 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation locale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture du projet</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Architecture du projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deployment.html">Déploiement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Structure de la base de données</a></li>
@@ -218,7 +218,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="_sources/index.rst.txt" title="View this page">
+  <a class="muted-link" href="_sources/architecture.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -231,65 +231,92 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="oc-lettings-documentation">
-<h1>OC_Lettings documentation<a class="headerlink" href="#oc-lettings-documentation" title="Lien vers cette rubrique">¶</a></h1>
-<p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
-<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
-documentation for details.</p>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation locale</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#prerequis">Prérequis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#cloner-le-depot">Cloner le dépôt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#creer-et-activer-l-environnement-virtuel">Créer et activer l’environnement virtuel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#installer-les-dependances">Installer les dépendances</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#configurer-les-variables-d-environnement">Configurer les variables d’environnement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#lancer-le-serveur-de-developpement">Lancer le serveur de développement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#lancer-les-tests">Lancer les tests</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture du projet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#arborescence">Arborescence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#apps-django">Apps Django</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#flux-de-requete">Flux de requête</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="configuration.html#variables-d-environnement">Variables d’environnement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configuration.html#exemple-de-fichier-env-developpement-local">Exemple de fichier .env (développement local)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configuration.html#configuration-en-production-render">Configuration en production (Render)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configuration.html#configuration-django-notable">Configuration Django notable</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="deployment.html">Déploiement</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="deployment.html#vue-d-ensemble">Vue d’ensemble</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deployment.html#pipeline-ci-cd-github-workflows-ci-cd-yml">Pipeline CI/CD (.github/workflows/ci-cd.yml)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deployment.html#secrets-github-requis">Secrets GitHub requis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deployment.html#docker">Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deployment.html#render">Render</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="database.html">Structure de la base de données</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="database.html#application-lettings">Application <code class="docutils literal notranslate"><span class="pre">lettings</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#application-profiles">Application <code class="docutils literal notranslate"><span class="pre">profiles</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#relations">Relations</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Guide d’utilisation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#urls-disponibles">URLs disponibles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#interface-d-administration">Interface d’administration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#surveillance-des-erreurs-sentry">Surveillance des erreurs (Sentry)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#fichiers-statiques">Fichiers statiques</a></li>
-</ul>
-</li>
-</ul>
+          <section id="architecture-du-projet">
+<h1>Architecture du projet<a class="headerlink" href="#architecture-du-projet" title="Lien vers cette rubrique">¶</a></h1>
+<p>Le projet est une application Django structurée en plusieurs apps indépendantes,
+toutes situées dans le dossier <code class="docutils literal notranslate"><span class="pre">src/</span></code>.</p>
+<section id="arborescence">
+<h2>Arborescence<a class="headerlink" href="#arborescence" title="Lien vers cette rubrique">¶</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Python-OC-Lettings-FR/
+├── .github/
+│   └── workflows/
+│       └── ci-cd.yml          # Pipeline CI/CD GitHub Actions
+├── doc/
+│   └── source/                # Sources de la documentation Sphinx
+├── src/
+│   ├── lettings/              # App : biens en location
+│   ├── profiles/              # App : profils utilisateurs
+│   ├── oc_lettings_site/      # App principale (settings, URLs racine)
+│   ├── templates/             # Templates globaux (base.html, 404, 500)
+│   ├── static/                # Fichiers statiques source
+│   ├── staticfiles/           # Fichiers statiques collectés (collectstatic)
+│   ├── manage.py
+│   ├── requirements.txt
+│   ├── Dockerfile
+│   └── conftest.py            # Fixtures pytest globales
+├── setup.cfg                  # Configuration pytest et coverage
+├── .readthedocs.yaml          # Configuration Read the Docs
+└── .env                       # Variables d&#39;environnement (non versionné)
+</pre></div>
 </div>
+</section>
+<section id="apps-django">
+<h2>Apps Django<a class="headerlink" href="#apps-django" title="Lien vers cette rubrique">¶</a></h2>
+<section id="oc-lettings-site">
+<h3>oc_lettings_site<a class="headerlink" href="#oc-lettings-site" title="Lien vers cette rubrique">¶</a></h3>
+<p>App principale du projet. Contient :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">settings.py</span></code> — configuration globale (base de données, middleware, Sentry, WhiteNoise)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">urls.py</span></code> — routage racine, inclut les URLs des apps <code class="docutils literal notranslate"><span class="pre">lettings</span></code> et <code class="docutils literal notranslate"><span class="pre">profiles</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">views.py</span></code> — vue de la page d’accueil</p></li>
+</ul>
+</section>
+<section id="lettings">
+<h3>lettings<a class="headerlink" href="#lettings" title="Lien vers cette rubrique">¶</a></h3>
+<p>Gère les biens en location. Expose :</p>
+<ul class="simple">
+<li><p>Les modèles <code class="docutils literal notranslate"><span class="pre">Address</span></code> et <code class="docutils literal notranslate"><span class="pre">Letting</span></code></p></li>
+<li><p>Les vues <code class="docutils literal notranslate"><span class="pre">index</span></code> (liste) et <code class="docutils literal notranslate"><span class="pre">letting</span></code> (détail)</p></li>
+<li><p>Les URLs sous le préfixe <code class="docutils literal notranslate"><span class="pre">/lettings/</span></code></p></li>
+</ul>
+</section>
+<section id="profiles">
+<h3>profiles<a class="headerlink" href="#profiles" title="Lien vers cette rubrique">¶</a></h3>
+<p>Gère les profils utilisateurs. Expose :</p>
+<ul class="simple">
+<li><p>Le modèle <code class="docutils literal notranslate"><span class="pre">Profile</span></code> (extension du <code class="docutils literal notranslate"><span class="pre">User</span></code> Django)</p></li>
+<li><p>Les vues <code class="docutils literal notranslate"><span class="pre">index</span></code> (liste) et <code class="docutils literal notranslate"><span class="pre">profile</span></code> (détail)</p></li>
+<li><p>Les URLs sous le préfixe <code class="docutils literal notranslate"><span class="pre">/profiles/</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="flux-de-requete">
+<h2>Flux de requête<a class="headerlink" href="#flux-de-requete" title="Lien vers cette rubrique">¶</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Navigateur
+    │
+    ▼
+Gunicorn (production) / runserver (dev)
+    │
+    ▼
+WhiteNoise (fichiers statiques)
+    │
+    ▼
+Django Middleware
+    │
+    ▼
+oc_lettings_site/urls.py
+    ├── /           → oc_lettings_site.views.index
+    ├── /lettings/  → lettings.urls
+    ├── /profiles/  → profiles.urls
+    └── /admin/     → Django Admin
+</pre></div>
+</div>
+</section>
 </section>
 
         </article>
@@ -297,16 +324,26 @@ documentation for details.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="installation.html">
+          <a class="next-page" href="configuration.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Installation locale</div>
+                <div class="title">Configuration</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          
+          <a class="prev-page" href="installation.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Installation locale</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -325,8 +362,34 @@ documentation for details.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Architecture du projet</a><ul>
+<li><a class="reference internal" href="#arborescence">Arborescence</a></li>
+<li><a class="reference internal" href="#apps-django">Apps Django</a><ul>
+<li><a class="reference internal" href="#oc-lettings-site">oc_lettings_site</a></li>
+<li><a class="reference internal" href="#lettings">lettings</a></li>
+<li><a class="reference internal" href="#profiles">profiles</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#flux-de-requete">Flux de requête</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
