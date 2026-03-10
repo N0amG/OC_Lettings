@@ -11,6 +11,7 @@ RUN pip install --upgrade pip \
 # ---- Final stage ----
 FROM python:3.12.10-slim
 
+# Ne pas créer de fichiers .pyc et forcer le buffering de la sortie standard pour voir les logs en temps réel
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
