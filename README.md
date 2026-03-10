@@ -52,6 +52,18 @@ python manage.py runserver
 
 L'application est accessible sur http://127.0.0.1:8000.
 
+### Lancer l'image Docker en local
+
+```bash
+# Récupérer la dernière image
+docker pull ghcr.io/n0amg/oc-lettings-site
+
+# Lancer le conteneur
+docker run -d -p 8000:8000 ghcr.io/n0amg/oc-lettings-site
+```
+
+L'application est alors accessible sur http://127.0.0.1:8000.
+
 ### Lancer les tests
 
 Depuis la racine du projet :
